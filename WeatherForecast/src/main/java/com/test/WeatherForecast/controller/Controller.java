@@ -19,6 +19,7 @@ import com.test.WeatherForecast.Service.UserService;
 import com.test.WeatherForecast.Service.Weathersevice;
 
 @RestController
+
 public class Controller {
 
 	@Autowired
@@ -28,17 +29,17 @@ public class Controller {
 	Weathersevice weathersertvice;
 	
 	
-	@PostMapping
+	@PostMapping("/userRegistration")
 	public String userSigup(@RequestBody SignUp signup  ) {
-		return	userservice.RegisterUser(signup);
+	return	userservice.RegisterUser(signup);
 	}
 	
-	@PostMapping
+	@PostMapping("/usersignIn")
 	public String userSigup(@RequestBody SignIn signin  ) {
-	return	userservice.RegisterUser(signin);
+	return	userservice.UserSign(signin);
 	}
 	
-	@PutMapping
+	@PutMapping("/weatherupdate")
 	public String updateweather(SignIn signIn) {
 		return	weathersertvice.updateweather(signIn);
 	}
@@ -48,12 +49,12 @@ public class Controller {
 		return	weathersertvice.deleteWeather(Id);
 	}
 	
-	@GetMapping("/User/{name}")
+	@GetMapping("/Userdetails/{name}")
 	public User gerttingUser(String name) {
 		return userservice.gettinguser(name);
 	}
 	
-	@GetMapping("/weather/{Userid}")
+	@GetMapping("/weatherdetails/{Userid}")
 	public List<weather> gerttingWeather(String userid) {
 		return	weathersertvice.gettingweather(userid);
 	}

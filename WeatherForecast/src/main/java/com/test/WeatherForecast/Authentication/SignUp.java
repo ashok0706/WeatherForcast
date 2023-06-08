@@ -1,5 +1,8 @@
 package com.test.WeatherForecast.Authentication;
 
+import lombok.Data;
+
+@Data
 public class SignUp {
 
 	private Integer UserId;

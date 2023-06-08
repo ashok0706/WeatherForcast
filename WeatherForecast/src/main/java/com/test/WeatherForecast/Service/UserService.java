@@ -19,12 +19,17 @@ public class UserService {
 	UserRepo userRepo;
 	WeatherRepo weatherRepo;
 
-	public String RegisterUser(SignIn signin) {
-		userRepo.save(signin);
+	public String RegisterUser(SignUp signup) {
+		userRepo.save(signup);
 		return "Successfully registerd";
 	}
 
 	public User gettinguser(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String UserSign(SignIn signin) {
 		// TODO Auto-generated method stub
 		return null;
 	}

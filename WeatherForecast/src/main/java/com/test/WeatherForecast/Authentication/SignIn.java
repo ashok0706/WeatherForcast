@@ -2,6 +2,7 @@ package com.test.WeatherForecast.Authentication;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
 import com.test.WeatherForecast.Model.weather;
@@ -9,14 +10,13 @@ import com.test.WeatherForecast.Model.weather;
 import lombok.Data;
 
 @Data
-
 public class SignIn {
 
 	private String userName;
 	
 	private String password;
 	
-	@OneToMany
+	@OneToMany(cascade =CascadeType.ALL )
 	private List<weather> weather;
 	
 	public List<weather> getWeather() {
