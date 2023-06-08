@@ -20,6 +20,17 @@ public class User {
    private String userEmaileString;
    private String phoneString;
    private String password;
+	
+	@OneToMany(cascade =CascadeType.ALL )
+	private List<weather> weather;
+	
+	public List<weather> getWeather() {
+		return weather;
+	}
+	public void setWeather(List<weather> weather) {
+		this.weather = weather;
+	}
+	
 public Integer getUserId() {
 	return UserId;
 }
