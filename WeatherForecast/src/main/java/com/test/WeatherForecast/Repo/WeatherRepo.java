@@ -1,5 +1,10 @@
 package com.test.WeatherForecast.Repo;
 
-public interface WeatherRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.test.WeatherForecast.Model.weather;
+@Repository
+public interface WeatherRepo extends JpaRepository<weather, Integer>{
 
 }
