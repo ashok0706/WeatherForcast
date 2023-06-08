@@ -16,7 +16,7 @@ public class SignIn {
 	
 	private String password;
 	
-	@OneToMany(cascade =CascadeType.ALL )
+// 	@OneToMany(cascade =CascadeType.ALL )
 	private List<weather> weather;
 	
 	public List<weather> getWeather() {
