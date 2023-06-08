@@ -1,8 +1,11 @@
 package com.test.WeatherForecast.Authentication;
-
+import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SignUp {
 
 	private Integer UserId;
