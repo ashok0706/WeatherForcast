@@ -4,11 +4,12 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
-import lombok.RequiredArgsConstructor;
-import lombok.AllArgsConstructor;
+
 import com.test.WeatherForecast.Model.weather;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
@@ -19,7 +20,7 @@ public class SignIn {
 	
 	private String password;
 	
-// 	@OneToMany(cascade =CascadeType.ALL )
+	@OneToMany(cascade =CascadeType.ALL )
 	private List<weather> weather;
 	
 	public List<weather> getWeather() {

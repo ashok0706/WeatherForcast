@@ -20,18 +20,23 @@ public class UserService {
 	WeatherRepo weatherRepo;
 
 	public String RegisterUser(SignUp signup) {
+		
 		userRepo.save(signup);
 		return "Successfully registerd";
 	}
 
 	public User gettinguser(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	  User Uname = userRepo.FindByUserName(name);
+	  
+		return Uname ;
 	}
-
 	public String UserSign(SignIn signin) {
-		// TODO Auto-generated method stub
-		return null;
+		User Usr =	userRepo.FindByPassword(signin.getPassword());
+			
+			if(Usr!=null) {
+				return "You Succesfully Logined ";
+			}
+			return "No such user Excist";
 	}
 
 	

@@ -1,22 +1,22 @@
 package com.test.WeatherForecast.Model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import lombok.RequiredArgsConstructor;
-import lombok.AllArgsConstructor;
-
-import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor 
 public class User {
   
 	@Id
@@ -27,17 +27,33 @@ public class User {
    private String userEmaileString;
    private String phoneString;
    private String password;
-	
-	@OneToMany(cascade =CascadeType.ALL )
-	private List<weather> weather;
-	
-	public List<weather> getWeather() {
-		return weather;
-	}
-	public void setWeather(List<weather> weather) {
-		this.weather = weather;
-	}
-	
+   
+   @OneToMany(cascade = CascadeType.ALL)
+   private List<weather> weather;
+   
+   
+   
+/**
+ * @param userId
+ * @param userName
+ * @param userEmaileString
+ * @param phoneString
+ * @param password
+ */
+public User(Integer userId, String userName, String userEmaileString, String phoneString, String password) {
+	super();
+	UserId = userId;
+	UserName = userName;
+	this.userEmaileString = userEmaileString;
+	this.phoneString = phoneString;
+	this.password = password;
+}
+public List<weather> getWeather() {
+	return weather;
+}
+public void setWeather(List<weather> weather) {
+	this.weather = weather;
+}
 public Integer getUserId() {
 	return UserId;
 }

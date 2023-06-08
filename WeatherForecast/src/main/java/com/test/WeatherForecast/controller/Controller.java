@@ -30,7 +30,7 @@ public class Controller {
 	
 	
 	@PostMapping("/userRegistration")
-	public String userSigup(@RequestBody SignUp signup  ) {
+	public String RegisterUser(@RequestBody SignUp signup  ) {
 	return	userservice.RegisterUser(signup);
 	}
 	
@@ -44,9 +44,9 @@ public class Controller {
 		return	weathersertvice.updateweather(signIn);
 	}
 	
-	@DeleteMapping("/Weather/{weatherid}/{username}")
-	public String deleteWeatherById(@PathVariable String Id, @PathVariable String Uname) {
-		return	weathersertvice.deleteWeather(Id);
+	@DeleteMapping("/Weather/{username}")
+	public String deleteWeatherById( @PathVariable String Uname) {
+		return	weathersertvice.deleteWeather(Uname);
 	}
 	
 	@GetMapping("/Userdetails/{name}")
@@ -54,8 +54,8 @@ public class Controller {
 		return userservice.gettinguser(name);
 	}
 	
-	@GetMapping("/weatherdetails/{Userid}")
-	public List<weather> gerttingWeather(String userid) {
-		return	weathersertvice.gettingweather(userid);
+	@GetMapping("/weatherdetails/{username}")
+	public List<weather> gerttingWeather(String username) {
+		return	weathersertvice.gettingweather(username);
 	}
 }
